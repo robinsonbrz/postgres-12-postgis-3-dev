@@ -2,12 +2,12 @@ version: '3.8'
 
 services:
 
-  geobit_dev_db:
+  dev_pg_12:
     image: kartoza/postgis:10.0-2.4
     # POSTGIS_MAJOR=3 
     # POSTGRES_MAJOR_VERSION=12 
 
-    container_name: geobit_dev_db
+    container_name: dev_pg_12
     environment:
       - POSTGRES_DB=postgres #${DB_NAME}
       - POSTGRES_USER=postgres # ${DB_USER}
@@ -19,7 +19,7 @@ services:
       - 25432:5432
 
     volumes:
-      - pg_geobit_dev_data:/var/lib/postgresql/data/
+      - dev_pg_12_data:/var/lib/postgresql/data/
 
 volumes:
     pg_geobit_dev_data:

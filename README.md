@@ -1,19 +1,18 @@
 
 # Postgres / Postgis container
 
-Purpose: creation of standard development environment to avoid version conflicts 
+Purpose: creation of standard Postgres postgis development environment to avoid version conflicts 
 
-Based on kartoza/postgis:pr-328-13-3.1 Docker container application.
-https://hub.docker.com/layers/kartoza/postgis/12.4/images/sha256-21aa19ff2df3832a039f1455d93bd15b00135c47042c6c40663f3085a8e0e84d?context=explore
+## Based on [kartoza/postgis:12.4](https://hub.docker.com/layers/kartoza/postgis/12.4/images/sha256-21aa19ff2df3832a039f1455d93bd15b00135c47042c6c40663f3085a8e0e84d?context=explore) Docker container application.
 
 
-```git clone repository https://gitlab.com/geobitbr_images/postgis-dev-container.git```
+```git clone repository https://github.com/robinsonbrz/postgres-12-postgis-3-dev.git```
 
 
 ### Building the container
 ````docker-compose  -f docker-compose.prod.yml up -d --build````
 
-A new container named ***geobit_dev_db*** is created and running
+A new container named ***dev_pg_12*** is created and running
 
 
 ### Accessing container psql
@@ -50,7 +49,7 @@ DB_PORT=25432
 
 
 ### Connect to container - optional
-````docker exec -ti geobit_dev_db bash````
+````docker exec -ti dev_pg_12 bash````
 
 
 
