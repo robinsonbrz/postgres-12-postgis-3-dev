@@ -22,4 +22,4 @@ services:
       - dev_pg_12_data:/var/lib/postgresql/data/
 
 volumes:
-    pg_geobit_dev_data:
+    dev_pg_12_data:
