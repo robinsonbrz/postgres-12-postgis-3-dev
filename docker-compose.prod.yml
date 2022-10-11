@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+
+  geobit_dev_db:
+    image: kartoza/postgis:10.0-2.4
+    # POSTGIS_MAJOR=3 
+    # POSTGRES_MAJOR_VERSION=12 
+
+    container_name: geobit_dev_db
+    environment:
+      - POSTGRES_DB=postgres #${DB_NAME}
+      - POSTGRES_USER=postgres # ${DB_USER}
+      - POSTGRES_PASS=postgres # ${DB_PASSWD}
+      - POSTGRES_PORT=25432 # ${DB_PASSWD}
+      - ALLOW_IP_RANGE=0.0.0.0/0
+      - POSTGRES_MULTIPLE_EXTENSIONS=postgis,hstore,postgis_topology,postgis_raster,pgrouting
+    ports: 
+      - 25432:5432
+
+    volumes:
+      - pg_geobit_dev_data:/var/lib/postgresql/data/
+
+volumes:
+    pg_geobit_dev_data:
